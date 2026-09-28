@@ -511,7 +511,7 @@ def writeHDR(name, data):
     cv2.imwrite(name, data[:, :, ::-1].astype(np.float32))
         
 def readHDR(name):
-    raw_in = cv2.imread(name, flags=cv2.IMREAD_ANYDEPTH)
+    raw_in = cv2.imread(name, flags=cv2.IMREAD_UNCHANGED)
     #flip from bgr to rgb
     return raw_in[:, :, ::-1]
 
